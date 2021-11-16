@@ -1,0 +1,11 @@
+# development:
+#   database: #db_name
+#   adapter: postgresql
+#   username: #username
+#   password: #password
+#   host: localhost
+
+# production:
+#   database: movie_api_production
+#   username: movie_api
+#   password: <%= ENV['MOVIE_API_DATABASE_PASSWORD'] %>
