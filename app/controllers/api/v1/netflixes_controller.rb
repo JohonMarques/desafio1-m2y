@@ -1,15 +1,21 @@
 module Api
     module V1
       class NetflixesController < ApplicationController
+        # GET http://localhost:3000/api/v1/netflixes
+
         def index
           movie = Netflix.order('release_year')
           render json: { status: 'SUCCESS', message: 'Movies List', data: movie }, status: :ok
         end
+        
+        # GET http://localhost:3000/api/v1/netflixes/1
   
         def show
             movie = Netflix.find(params[:id])
           render json: { status: 'SUCCESS', message: 'Movie Founded', data: movie }, status: :ok
         end
+
+        #POST http://localhost:3000/api/v1/netflixes
   
         def create
             movie = Netflix.new(netflix_params)
@@ -20,6 +26,8 @@ module Api
                    status: :unprocessable_entity
           end
         end
+
+        # PUT http://localhost:3000/api/v1/netflixes/1
   
         def update
           movie = Netflix.find(params[:id])
@@ -30,7 +38,9 @@ module Api
                    status: :unprocessable_entity
           end
         end
-  
+
+        # DELETE http://localhost:3000/api/v1/netflixes/1
+
         def destroy
           movie = Netflix.find(params[:id])
           movie.destroy
