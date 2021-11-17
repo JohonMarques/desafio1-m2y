@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2021_11_15_200607) do
 
   create_table "netflixes", force: :cascade do |t|
     t.string "show_id"
-    t.string "type"
+    t.string "genre"
     t.string "title"
     t.string "director"
     t.text "cast"
