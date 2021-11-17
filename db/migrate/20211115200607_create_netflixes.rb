@@ -2,7 +2,7 @@ class CreateNetflixes < ActiveRecord::Migration[6.1]
   def change
     create_table :netflixes do |t|
       t.string :show_id
-      t.string :type
+      t.string :genre
       t.string :title
       t.string :director
       t.text :cast
